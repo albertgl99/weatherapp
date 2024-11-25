@@ -23,10 +23,22 @@ def weather_view(request):
 
     if weather_data:
         context = {
-            'city': city,
+            'city': weather_data['name'],
+            'country': weather_data['sys']['country'],
             'temperature': weather_data['main']['temp'],
+            'feels_like': weather_data['main']['feels_like'],
+            'min_temp': weather_data['main']['temp_min'],
+            'max_temp': weather_data['main']['temp_max'],
+            'humidity': weather_data['main']['humidity'],
+            'pressure': weather_data['main']['pressure'],
+            'wind_speed': weather_data['wind']['speed'],
+            'wind_direction': weather_data['wind'].get('deg', 'N/A'),  # Dirección del viento
+            'weather': weather_data['weather'][0]['main'],
             'description': weather_data['weather'][0]['description'],
-            'icon': weather_data['weather'][0]['icon'],
+            'icon_url': f"https://openweathermap.org/img/wn/{weather_data['weather'][0]['icon']}@2x.png",
+            'sunrise': weather_data['sys']['sunrise'],  # Tiempo de amanecer
+            'sunset': weather_data['sys']['sunset'],    # Tiempo de atardecer
+            'visibility': weather_data.get('visibility', 'N/A'),  # Visibilidad en metros
         }
     else:
         context = {
