@@ -120,6 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'  # URL base para archivos estáticos
 
+STATICFILES_DIRS = [
+    BASE_DIR / "weather/static",  # Agrega esta línea
+]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"  # Para `collectstatic`
 
