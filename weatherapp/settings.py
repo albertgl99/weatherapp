@@ -118,14 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# La URL que usará Django para servir archivos estáticos
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'  # URL base para archivos estáticos
 
-# Ruta donde Django buscará los archivos estáticos durante el desarrollo
-STATICFILES_DIRS = [BASE_DIR / "weather/static"]
 
-# Carpeta donde Django recopilará todos los archivos estáticos para producción
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Para `collectstatic`
+
 
 
 
