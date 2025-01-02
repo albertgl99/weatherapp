@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -120,9 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'  # URL base para archivos estáticos
 
-STATICFILES_DIRS = [
-    BASE_DIR / "weather/static",  # Agrega esta línea
-]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"  # Para `collectstatic`
 
